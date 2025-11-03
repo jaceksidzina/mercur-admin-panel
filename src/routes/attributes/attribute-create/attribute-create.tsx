@@ -51,7 +51,7 @@ export const AttributeCreate = () => {
 
       queryClient.invalidateQueries({ queryKey: attributeQueryKeys.lists() });
 
-      toast.success("Attribute created!");
+      toast.success("Attribute was successfully created.");
       navigate(-1);
     } catch (error) {
       toast.error((error as Error).message);
