@@ -37,7 +37,7 @@ export const OrderReturnRequestsPage = () => {
     order_return_request: requests,
     isLoading,
     refetch,
-    count,
+    count = 0,
   } = useReturnRequests({
     offset: currentPage * PAGE_SIZE,
     limit: PAGE_SIZE,
@@ -109,7 +109,7 @@ export const OrderReturnRequestsPage = () => {
           </Table.Body>
         </Table>
         <Table.Pagination
-          canNextPage={PAGE_SIZE * (currentPage + 1) < (count ?? 0)}
+          canNextPage={PAGE_SIZE * (currentPage + 1) < count}
           canPreviousPage={currentPage > 0}
           previousPage={() => {
             setCurrentPage(currentPage - 1);
@@ -118,7 +118,7 @@ export const OrderReturnRequestsPage = () => {
             setCurrentPage(currentPage + 1);
           }}
           count={count ?? 0}
-          pageCount={Math.ceil((count ?? 0) / PAGE_SIZE)}
+          pageCount={Math.ceil(count / PAGE_SIZE)}
           pageIndex={currentPage}
           pageSize={PAGE_SIZE}
         />

@@ -33,7 +33,7 @@ export const RequestReviewRemoveList = () => {
 
   const [currentFilter, setCurrentFilter] = useState<FilterState>("");
 
-  const { requests, isLoading, refetch, count } = useVendorRequests({
+  const { requests, isLoading, refetch, count = 0 } = useVendorRequests({
     offset: currentPage * PAGE_SIZE,
     limit: PAGE_SIZE,
     type: "review_remove",
@@ -102,7 +102,7 @@ export const RequestReviewRemoveList = () => {
           </Table.Body>
         </Table>
         <Table.Pagination
-          canNextPage={PAGE_SIZE * (currentPage + 1) < (count ?? 0)}
+          canNextPage={PAGE_SIZE * (currentPage + 1) < count}
           canPreviousPage={currentPage > 0}
           previousPage={() => {
             setCurrentPage(currentPage - 1);
@@ -111,7 +111,7 @@ export const RequestReviewRemoveList = () => {
             setCurrentPage(currentPage + 1);
           }}
           count={count ?? 0}
-          pageCount={Math.ceil((count ?? 0) / PAGE_SIZE)}
+          pageCount={Math.ceil(count / PAGE_SIZE)}
           pageIndex={currentPage}
           pageSize={PAGE_SIZE}
         />
