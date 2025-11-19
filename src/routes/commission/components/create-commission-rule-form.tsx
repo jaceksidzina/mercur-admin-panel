@@ -560,17 +560,16 @@ const CreateCommissionRuleForm = ({ onSuccess }: Props) => {
               />
 
               {minCommissionEnabled && currencies.length > 0 && (
-                <div className="flex flex-col gap-y-2">
-                  <Label>Minimum Commission Values</Label>
-                  {currencies.map((currency) => (
-                    <Form.Field
-                      key={currency}
-                      control={form.control}
-                      name="minCommission"
-                      render={({ field: { value = {}, onChange } }) => (
-                        <Form.Item>
-                          <Form.Label>{currency.toUpperCase()}</Form.Label>
-                          <Form.Control>
+                <Form.Field
+                  control={form.control}
+                  name="minCommission"
+                  render={({ field: { value = {}, onChange } }) => (
+                    <Form.Item>
+                      <Form.Label>Minimum Commission Values</Form.Label>
+                      <div className="flex flex-col gap-y-2">
+                        {currencies.map((currency) => (
+                          <div key={currency}>
+                            <Label className="mb-1">{currency.toUpperCase()}</Label>
                             <Input
                               type="number"
                               min={0}
@@ -584,12 +583,13 @@ const CreateCommissionRuleForm = ({ onSuccess }: Props) => {
                               }
                               placeholder={`Enter minimum in ${currency.toUpperCase()}`}
                             />
-                          </Form.Control>
-                        </Form.Item>
-                      )}
-                    />
-                  ))}
-                </div>
+                          </div>
+                        ))}
+                      </div>
+                      <Form.ErrorMessage />
+                    </Form.Item>
+                  )}
+                />
               )}
 
               <SwitchBox
@@ -600,17 +600,16 @@ const CreateCommissionRuleForm = ({ onSuccess }: Props) => {
               />
 
               {maxCommissionEnabled && currencies.length > 0 && (
-                <div className="flex flex-col gap-y-2">
-                  <Label>Maximum Commission Values</Label>
-                  {currencies.map((currency) => (
-                    <Form.Field
-                      key={currency}
-                      control={form.control}
-                      name="maxCommission"
-                      render={({ field: { value = {}, onChange } }) => (
-                        <Form.Item>
-                          <Form.Label>{currency.toUpperCase()}</Form.Label>
-                          <Form.Control>
+                <Form.Field
+                  control={form.control}
+                  name="maxCommission"
+                  render={({ field: { value = {}, onChange } }) => (
+                    <Form.Item>
+                      <Form.Label>Maximum Commission Values</Form.Label>
+                      <div className="flex flex-col gap-y-2">
+                        {currencies.map((currency) => (
+                          <div key={currency}>
+                            <Label className="mb-1">{currency.toUpperCase()}</Label>
                             <Input
                               type="number"
                               min={0}
@@ -624,12 +623,13 @@ const CreateCommissionRuleForm = ({ onSuccess }: Props) => {
                               }
                               placeholder={`Enter maximum in ${currency.toUpperCase()}`}
                             />
-                          </Form.Control>
-                        </Form.Item>
-                      )}
-                    />
-                  ))}
-                </div>
+                          </div>
+                        ))}
+                      </div>
+                      <Form.ErrorMessage />
+                    </Form.Item>
+                  )}
+                />
               )}
             </>
           )}
