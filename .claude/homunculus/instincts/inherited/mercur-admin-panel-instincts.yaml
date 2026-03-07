@@ -1,0 +1,583 @@
+# Instincts generated from https://github.com/jaceksidzina/mercur-admin-panel
+# Generated: 2026-03-07T19:10:26.099Z
+# Version: 2.0
+
+---
+id: mercur-admin-panel-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Commit Length
+
+## Action
+
+Write moderate-length commit messages (~50 characters)
+
+## Evidence
+
+- Average commit message length: 55 chars
+- Based on 200 commits
+
+---
+id: mercur-admin-panel-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: mercur-admin-panel-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: mercur-admin-panel-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: assets, components, dashboard-app, hooks, i18n
+
+---
+id: mercur-admin-panel-workflow-database-migration
+trigger: "when modifying the database schema or adding tables"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Database Migration
+
+## Action
+
+Follow the database-migration workflow:
+1. Create migration file
+2. Update schema definitions
+3. Generate/update types
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: **/schema.*, **/types.ts
+
+---
+id: mercur-admin-panel-workflow-release-workflow
+trigger: "when doing release workflow"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Release Workflow
+
+## Action
+
+Follow the release-workflow workflow:
+1. Update package.json version
+2. Update CHANGELOG.md
+3. Create release branch
+4. Merge to main
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: package.json, CHANGELOG.md
+
+---
+id: mercur-admin-panel-workflow-internationalization-update
+trigger: "when doing internationalization update"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Internationalization Update
+
+## Action
+
+Follow the internationalization-update workflow:
+1. Update schema.json
+2. Update en.json with new keys
+3. Propagate to all language files
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~8x per month
+- Files: src/i18n/translations/$schema.json, src/i18n/translations/en.json, src/i18n/translations/*.json
+
+---
+id: mercur-admin-panel-workflow-order-management-feature
+trigger: "when doing order management feature"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Order Management Feature
+
+## Action
+
+Follow the order-management-feature workflow:
+1. Create form component
+2. Add validation
+3. Update translations
+4. Add to order detail routes
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~4x per month
+- Files: src/routes/orders/order-*/components/*-form/*.tsx, src/routes/orders/order-*/*.tsx, src/i18n/translations/en.json
+
+---
+id: mercur-admin-panel-workflow-bug-fix-workflow
+trigger: "when doing bug fix workflow"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Bug Fix Workflow
+
+## Action
+
+Follow the bug-fix-workflow workflow:
+1. Identify problematic component
+2. Apply fix
+3. Update related translations if needed
+4. Test fix
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~6x per month
+- Files: src/routes/*/*.tsx, src/components/*/*.tsx, src/i18n/translations/en.json
+
+---
+id: mercur-admin-panel-workflow-promotion-management-feature
+trigger: "when doing promotion management feature"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Promotion Management Feature
+
+## Action
+
+Follow the promotion-management-feature workflow:
+1. Update promotion forms
+2. Modify rule components
+3. Update translations
+4. Test promotion flow
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: src/routes/promotions/promotion-create/components/create-promotion-form/*.tsx, src/routes/promotions/promotion-edit-details/components/edit-promotion-form/*.tsx, src/routes/promotions/common/edit-rules/components/*/*.tsx
+
+---
+id: mercur-admin-panel-workflow-dependency-update-workflow
+trigger: "when doing dependency update workflow"
+confidence: 0.65
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Workflow Dependency Update Workflow
+
+## Action
+
+Follow the dependency-update-workflow workflow:
+1. Update package.json
+2. Update yarn.lock
+3. Update configuration files if needed
+4. Test build
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~3x per month
+- Files: package.json, yarn.lock, .eslintrc.json
+
+---
+id: mercur-admin-panel-file-naming-kebab-case
+trigger: "When creating new files"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel File Naming Kebab Case
+
+## Action
+
+Use kebab-case naming convention for all filenames
+
+## Evidence
+
+- Files like create-promotion-form, edit-promotion-form
+- Consistent kebab-case across src/routes structure
+
+---
+id: mercur-admin-panel-function-naming-camel-case
+trigger: "When defining functions"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Function Naming Camel Case
+
+## Action
+
+Use camelCase naming convention for function names
+
+## Evidence
+
+- TypeScript codeStyle analysis showing camelCase for functions
+- Consistent pattern across .tsx files
+
+---
+id: mercur-admin-panel-class-naming-pascal-case
+trigger: "When defining classes or components"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Class Naming Pascal Case
+
+## Action
+
+Use PascalCase naming convention for class and component names
+
+## Evidence
+
+- TypeScript codeStyle analysis showing PascalCase for classes
+- Component files following PascalCase pattern
+
+---
+id: mercur-admin-panel-constants-screaming-snake-case
+trigger: "When defining constants"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Constants Screaming Snake Case
+
+## Action
+
+Use SCREAMING_SNAKE_CASE naming convention for constants
+
+## Evidence
+
+- TypeScript codeStyle analysis showing SCREAMING_SNAKE_CASE for constants
+
+---
+id: mercur-admin-panel-use-named-exports
+trigger: "When exporting functions or components"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Use Named Exports
+
+## Action
+
+Use named exports instead of default exports
+
+## Evidence
+
+- exportStyle: 'named' in codeStyle analysis
+- Consistent named export pattern across components
+
+---
+id: mercur-admin-panel-use-absolute-imports
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Use Absolute Imports
+
+## Action
+
+Use absolute import paths instead of relative imports
+
+## Evidence
+
+- importStyle: 'absolute' in codeStyle analysis
+- TypeScript project structure supports absolute imports
+
+---
+id: mercur-admin-panel-commit-with-jira-ticket
+trigger: "When making commits for feature work or fixes"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Commit With Jira Ticket
+
+## Action
+
+Include JIRA ticket number in commit message format: type(TICKET): description
+
+## Evidence
+
+- fix(MM2-2530): Not user friendly message
+- feat(MM2-2286): Create refund
+- chore(MM2-2369): Order details
+
+---
+id: mercur-admin-panel-commit-prefix-fix
+trigger: "When fixing bugs"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Commit Prefix Fix
+
+## Action
+
+Use 'fix' prefix in commit messages
+
+## Evidence
+
+- 'fix' appears in commit prefixes
+- Multiple examples: fix(MM2-2530), fix(MM2-2459)
+
+---
+id: mercur-admin-panel-commit-average-length
+trigger: "When writing commit messages"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Commit Average Length
+
+## Action
+
+Keep commit message length around 55 characters
+
+## Evidence
+
+- averageLength: 55 in commit analysis
+- Examples show concise but descriptive messages
+
+---
+id: mercur-admin-panel-use-try-catch-errors
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Use Try Catch Errors
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- errorHandling style: 'try-catch'
+- No custom error classes or global handlers detected
+
+---
+id: mercur-admin-panel-release-version-update
+trigger: "When preparing a release"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Release Version Update
+
+## Action
+
+Update package.json version and create CHANGELOG.md entry
+
+## Evidence
+
+- release-workflow with 95% confidence
+- Files: package.json, CHANGELOG.md
+- Commits: 'Update version to 1.5.4'
+
+---
+id: mercur-admin-panel-update-schema-first
+trigger: "When adding new translations"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Update Schema First
+
+## Action
+
+Update $schema.json first, then en.json, then propagate to all language files
+
+## Evidence
+
+- internationalization-update workflow
+- Files: src/i18n/translations/$schema.json, multiple language files
+- Frequency: 8-10/month
+
+---
+id: mercur-admin-panel-order-form-pattern
+trigger: "When adding order management features"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Order Form Pattern
+
+## Action
+
+Create form component in order-*/components/*-form/ directory with validation and translations
+
+## Evidence
+
+- order-management-feature workflow
+- Path pattern: src/routes/orders/order-*/components/*-form/*.tsx
+- Examples: refund, billing address edits
+
+---
+id: mercur-admin-panel-promotion-form-structure
+trigger: "When updating promotion functionality"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Promotion Form Structure
+
+## Action
+
+Update both create and edit promotion forms, modify rule components, and update translations
+
+## Evidence
+
+- promotion-management-feature workflow
+- Files: create-promotion-form, edit-promotion-form, edit-rules components
+- fix(MM2-2459): Promotions sorting
+
+---
+id: mercur-admin-panel-component-bug-fix
+trigger: "When fixing component bugs"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Component Bug Fix
+
+## Action
+
+Update the specific component file and related translation keys if UI text changes
+
+## Evidence
+
+- bug-fix-workflow pattern
+- Files: src/routes/*/*.tsx, src/components/*/*.tsx
+- Frequency: 6-8/month
+
+---
+id: mercur-admin-panel-dependency-update-with-lock
+trigger: "When updating dependencies"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: jaceksidzina/mercur-admin-panel
+---
+
+# Mercur Admin Panel Dependency Update With Lock
+
+## Action
+
+Update package.json, yarn.lock, and related config files, then test build
+
+## Evidence
+
+- dependency-update-workflow
+- Files: package.json, yarn.lock, .eslintrc.json, vite.config.mts
+- Frequency: 3-4/month
+
